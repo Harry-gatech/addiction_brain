@@ -11,6 +11,9 @@ __pycache__/
 dist/
 build/
 
+#results as results will be generated: 
+results/
+
 # Jupyter checkpoints
 .ipynb_checkpoints/
 
