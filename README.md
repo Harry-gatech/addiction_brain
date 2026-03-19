@@ -54,7 +54,7 @@ from addiction_brain.network_hop import run_trajectory
 results, summary = run_trajectory(network_df, add_targets, non_targets)
 ```
 
-Project Structure
+## Project Structure
 Dependencies
 Python 3.8+
 pandas
@@ -65,12 +65,12 @@ statsmodels
 tqdm
 
 
-Contributing
+## Contributing
 Contributions are welcome! If you have ideas for new features or improvements, feel free to open an issue or submit a pull request.
 
-License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Acknowledgments
+## Acknowledgments
 Special thanks to the contributors and the open-source community for providing the tools and libraries that made this project possible.
 
