@@ -1,56 +1,58 @@
-#Addiction Brain Analysis Pipeline
-Overview
-The addiction_brain package is a domain-specific research pipeline designed for neuroscience and chemoinformatics. It provides tools for analyzing drug-target interactions, pathway enrichment, and brain-region-specific data. The package is tailored for researchers working on addiction, brain disorders, and organ-level systems biology.
+# Addiction Brain Analysis Pipeline
 
-Features
-Drug-Target Interaction Analysis: Tools for mapping and analyzing drug-target interactions using cheminformatics libraries like RDKit.
-Pathway Enrichment Analysis: Automated workflows for identifying enriched pathways and performing statistical tests.
-Brain-Region-Specific Analysis: Functions for analyzing targets and pathways specific to brain regions.
-Data Deduplication: Utilities for cleaning and deduplicating chemical datasets.
-Visualization: Support for generating figures and visual summaries of results.
-Installation
+## Overview
+The **addiction_brain** package is a domain-specific research pipeline designed for neuroscience and chemoinformatics. It provides tools for analyzing drug-target interactions, pathway enrichment, and brain-region-specific data. The package is tailored for researchers working on addiction, brain disorders, and organ-level systems biology.
+
+## Features
+*   **Drug-Target Interaction Analysis**: Tools for mapping and analyzing drug-target interactions using cheminformatics libraries like RDKit.
+*   **Pathway Enrichment Analysis**: Automated workflows for identifying enriched pathways and performing statistical tests.
+*   **Brain-Region-Specific Analysis**: Functions for analyzing targets and pathways specific to brain regions.
+*   **Data Deduplication**: Utilities for cleaning and deduplicating chemical datasets.
+*   **Visualization**: Support for generating figures and visual summaries of results.
+
+## Installation
 To use the addiction_brain package, clone the repository and install the required dependencies:
+
+```bash
 # Clone the repository
-```markdown
-git clone https://github.com/your-repo/addiction_brain.git
+git clone https://github.com
 
 # Navigate to the project directory
-```markdown
 cd addiction_brain
 
 # Install dependencies
-```markdown
 pip install -r requirements.txt
+
 
 Usage
 1. Deduplication
 Use the deduplication module to clean and deduplicate chemical datasets:
-```markdown
+```
 from addiction_brain.deduplication import clean_inchi_butina
 
 cleaned_data = clean_inchi_butina("path/to/mapping_file.txt")
-
+```
 2. BBB Permeability Analysis
 Analyze blood-brain barrier (BBB) permeability using the BBB_calc module:
-```markdown
+```
 from addiction_brain.BBB_calc import annotate_bbb
 
 annotated_data = annotate_bbb(dataframe, smiles_col="smiles")
-
+```
 3. Pathway Enrichment
 Perform pathway enrichment analysis with the Enrichment_target module:
-```markdown
+```
 from addiction_brain.Enrichment_target import enrichment
 
 enriched_data = enrichment(binding_data, N_add_total, N_non_total)
-
+```
 4. Network Analysis
 Analyze drug trajectories and network interactions using the network_hop module:
-```markdown
+```
 from addiction_brain.network_hop import run_trajectory
 
 results, summary = run_trajectory(network_df, add_targets, non_targets)
-
+```
 
 Project Structure
 Dependencies
