@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np 
 from scipy.stats import mannwhitneyu
 from statsmodels.stats.multitest import multipletests
+from .config import BINDING_PATH
 
 def load(rep: pd.DataFrame, add: pd.DataFrame, non: pd.DataFrame): 
     """
@@ -10,7 +11,7 @@ def load(rep: pd.DataFrame, add: pd.DataFrame, non: pd.DataFrame):
     """
     drugs = rep[['compound_id', 'compound_name', 'addiction_status']]
 
-    bind = pd.read_csv(r"Data\Binding.txt", sep=r"\s+", header=None, 
+    bind = pd.read_csv(BINDING_PATH, sep=r"\s+", header=None, 
                        names=["compound_id", "binding_prob", "target_symbol"])
 
     add_targets = bind[(bind['target_symbol'].isin(add['target_symbol'])) & (bind['binding_prob'] >= 0.7)]

@@ -5,6 +5,7 @@ import glob, os
 from tqdm import tqdm
 from pathlib import Path
 from collections import defaultdict
+from .config import BINDING_PATH, TRANSCRIPTOMIC_PATH, CTD_PATH
 
 #Files for the analysis: 
 
@@ -25,10 +26,10 @@ def load_data(df: pd.DataFrame):
     N_add_total = df[df['label'] == 1]['compound_id'].nunique()
     N_non_total = df[df['label'] == 0]['compound_id'].nunique()
 
-    hpa = pd.read_csv(r"Data\transcriptomic_data.tsv", sep="\t")
-    ctd = pd.read_csv(r"Data\CTD_genes_pathways.txt", sep=r"\s*\|\s*", engine="python").rename(
+    hpa = pd.read_csv(TRANSCRIPTOMIC_PATH, sep="\t")
+    ctd = pd.read_csv(CTD_PATH, sep=r"\s*\|\s*", engine="python").rename(
     columns={"GeneSymbol":"target_symbol", "PathwayID":"pathway_id", "PathwayName":"pathway_name"})
-    bind = pd.read_csv(r"Data\Binding.txt", sep = r"\s+", header = None, names=["compound_id", "binding_prob", "target_symbol"] )
+    bind = pd.read_csv(BINDING_PATH, sep = r"\s+", header = None, names=["compound_id", "binding_prob", "target_symbol"] )
 
     #block for standardizing column names and selecting genes based on pTPM >= 1 in brain regions: 
 

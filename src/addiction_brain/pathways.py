@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy.stats import mannwhitneyu
 from statsmodels.stats.multitest import multipletests
+from .config import BINDING_PATH
 def load_data(df:pd.DataFrame): 
 
     """
@@ -16,7 +17,7 @@ def load_data(df:pd.DataFrame):
 
     df = df[['compound_id', 'compound_name', 'addiction_status']]
 
-    bind = pd.read_csv(r"Data\Binding.txt", sep = r"\s+", header = None, names=["compound_id", "binding_prob", "target_symbol"] )
+    bind = pd.read_csv(BINDING_PATH, sep = r"\s+", header = None, names=["compound_id", "binding_prob", "target_symbol"] )
 
     df = df.merge(bind, on= 'compound_id', how= 'inner')
     return df 

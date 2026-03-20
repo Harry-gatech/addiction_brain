@@ -8,6 +8,7 @@ from .ratio import run_ratios
 from .dti import run_dti
 from .network_hop import run_trajectory
 from .second_order import run_second
+from .config import BINDING_PATH, TRANSCRIPTOMIC_PATH, CTD_PATH, STRING_NODE_PATH, STRING_EDGE_PATH
 __all__ = [
     "clean_inchi_butina",
     "annotate_bbb",
