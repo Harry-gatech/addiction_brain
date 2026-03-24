@@ -1,7 +1,7 @@
 # Addiction Brain Analysis Pipeline
 
 ## Overview
-The **addiction_brain** package is a domain-specific research pipeline designed for neuroscience and chemoinformatics. It provides tools for analyzing drug-target interactions, pathway enrichment, and brain-region-specific data. The package is tailored for researchers working on addiction, brain disorders, and organ-level systems biology.
+The **addiction_brain** package is a domain-specific research pipeline designed for neuroscience, chemoinformatics and structural biology. It provides tools for analyzing drug-target interactions, pathway enrichment, and brain-region-specific data. The package is tailored for researchers working on addiction, brain disorders, and organ-level systems biology.
 
 ## Features
 *   **Drug-Target Interaction Analysis**: Tools for mapping and analyzing drug-target interactions using cheminformatics libraries like RDKit.
@@ -63,14 +63,3 @@ RDKit
 scipy
 statsmodels
 tqdm
-
-
-## Contributing
-Contributions are welcome! If you have ideas for new features or improvements, feel free to open an issue or submit a pull request.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-## Acknowledgments
-Special thanks to the contributors and the open-source community for providing the tools and libraries that made this project possible.
-
