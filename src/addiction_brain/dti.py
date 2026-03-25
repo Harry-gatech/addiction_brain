@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import re
+from .config import BINDING_PATH, STRING_NODE_PATH, STRING_EDGE_PATH
 
 
 def make_data(bind, add, non, rep): 
@@ -66,9 +67,9 @@ def string_data(node, edge, dti):
 
 def run_dti(add, non, rep): 
     
-    bind = pd.read_csv(r"Data\Binding.txt", sep = r"\s+", header = None, names=["compound_id", "binding_prob", "target_symbol"])
-    node = pd.read_csv(r"Data\STRING_node.csv")
-    edge = pd.read_csv(r"Data\STRING_edge.csv")
+    bind = pd.read_csv(BINDING_PATH, sep = r"\s+", header = None, names=["compound_id", "binding_prob", "target_symbol"])
+    node = pd.read_csv(STRING_NODE_PATH)
+    edge = pd.read_csv(STRING_EDGE_PATH)
     dti = make_data(bind, add, non, rep)
     combined_edges = string_data(node, edge, dti)
     return combined_edges
